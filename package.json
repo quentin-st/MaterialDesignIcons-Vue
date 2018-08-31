@@ -1,0 +1,26 @@
+{
+  "name": "mdi-vue",
+  "version": "1.0.0",
+  "description": "Material Design Icons Vue component",
+  "main": "dist/vue-mdi.js",
+  "scripts": {
+    "build": "rimraf ./dist && webpack --config ./webpack.config.js"
+  },
+  "author": "Quentin S. <stoeckel.quentin@gmail.com> (https://mesavolt.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "path": "^0.12.7",
+    "rimraf": "^2.6.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "3",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "vue": "^2.5.17",
+    "vue-loader": "^14.2.2"
+  }
+}
