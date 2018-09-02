@@ -9,10 +9,10 @@ Easy peasy MaterialDesignIcons usage in Vue components.
 Require this package into your project:
 
 ```bash
-yarn add materialdesign-svg --save-dev
+yarn add materialdesign-vue --save-dev
 
 # or, using npm
-npm install materialdesign-svg --save-dev
+npm install materialdesign-vue --save-dev
 ```
 
 ### Other
