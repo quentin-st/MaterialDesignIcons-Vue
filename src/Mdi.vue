@@ -6,6 +6,7 @@
 
 <script>
   const PATH_REGEX = /<path d="(.+)" \/>/;
+  const BASE64_PREFIX = 'data:image/svg+xml;base64,';
 
   export default {
     name: 'mdi',
@@ -22,7 +23,20 @@
     },
     computed: {
       d() {
-        return PATH_REGEX.exec(this.mdi)[1];
+        let svg = this.mdi;
+
+        // Decode base64
+        if (svg.indexOf(BASE64_PREFIX) === 0) {
+          svg = atob(svg.substr(BASE64_PREFIX.length));
+        }
+
+        const result = PATH_REGEX.exec(svg);
+        if (result === null) {
+          console.warn('[Mdi.vue] Could not decode specified icon, please ensure it\'s been properly imported');
+          return null;
+        }
+
+        return result[1];
       },
       allAttrs() {
         return Object.assign(
